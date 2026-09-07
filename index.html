@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>PSANDILYA1440 | Prakhhar Sandilya</title>
 
@@ -31,8 +28,11 @@
 
     body {
       min-height: 100vh;
+      overflow-x: hidden;
+
       background: #030706;
       color: #e7f4ec;
+
       font-family:
         Inter,
         ui-sans-serif,
@@ -41,8 +41,6 @@
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
-
-      overflow-x: hidden;
     }
 
     a {
@@ -50,13 +48,9 @@
       text-decoration: none;
     }
 
-    button {
-      font: inherit;
-    }
-
 
     /* =========================================================
-       BACKGROUND
+       MATRIX-STYLE BACKGROUND GRID
     ========================================================= */
 
     body::before {
@@ -104,6 +98,7 @@
 
     .grid-glow {
       position: fixed;
+
       width: 350px;
       height: 350px;
 
@@ -117,9 +112,11 @@
         );
 
       pointer-events: none;
+
       z-index: -1;
 
       opacity: 0;
+
       transition: opacity 0.3s ease;
     }
 
@@ -139,18 +136,25 @@
       background: #4dff91;
 
       z-index: 9999;
-      box-shadow: 0 0 12px rgba(77, 255, 145, 0.7);
+
+      box-shadow:
+        0 0 12px rgba(77, 255, 145, 0.7);
     }
 
 
     /* =========================================================
-       MAIN CONTAINER
+       PAGE
     ========================================================= */
 
     .page {
       width: min(1120px, calc(100% - 32px));
+
       margin: 0 auto;
-      padding: 24px 0 80px;
+
+      padding:
+        24px
+        0
+        80px;
     }
 
 
@@ -164,6 +168,7 @@
       justify-content: space-between;
 
       padding: 12px 4px;
+
       margin-bottom: 24px;
 
       position: relative;
@@ -171,22 +176,28 @@
     }
 
     .logo {
+      color: #ecfff2;
+
       font-size: 14px;
       font-weight: 800;
-      letter-spacing: 0.14em;
 
-      color: #ecfff2;
+      letter-spacing: 0.14em;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
+
       gap: 8px;
 
       padding: 5px;
 
-      border: 1px solid rgba(108, 255, 159, 0.10);
-      background: rgba(4, 12, 8, 0.68);
+      border:
+        1px solid
+        rgba(108, 255, 159, 0.10);
+
+      background:
+        rgba(4, 12, 8, 0.68);
 
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
@@ -199,7 +210,8 @@
 
       border-radius: 999px;
 
-      color: rgba(231, 244, 236, 0.58);
+      color:
+        rgba(231, 244, 236, 0.58);
 
       font-size: 12px;
       font-weight: 600;
@@ -212,12 +224,16 @@
 
     .nav-links a:hover {
       color: #eafff0;
-      background: rgba(78, 255, 145, 0.08);
+
+      background:
+        rgba(78, 255, 145, 0.08);
     }
 
     .nav-links a.active {
       color: #dffff0;
-      background: rgba(78, 255, 145, 0.12);
+
+      background:
+        rgba(78, 255, 145, 0.12);
     }
 
 
@@ -226,7 +242,9 @@
     ========================================================= */
 
     .panel {
-      border: 1px solid rgba(114, 255, 161, 0.11);
+      border:
+        1px solid
+        rgba(114, 255, 161, 0.11);
 
       background:
         linear-gradient(
@@ -259,7 +277,9 @@
 
       border-radius: 34px;
 
-      border: 1px solid rgba(121, 255, 165, 0.14);
+      border:
+        1px solid
+        rgba(121, 255, 165, 0.14);
 
       background: #07100c;
 
@@ -279,18 +299,27 @@
       background-image:
         linear-gradient(
           90deg,
-          rgba(3, 8, 7, 0.94) 0%,
-          rgba(3, 8, 7, 0.82) 25%,
-          rgba(3, 8, 7, 0.48) 52%,
-          rgba(3, 8, 7, 0.18) 78%,
-          rgba(3, 8, 7, 0.28) 100%
+          rgba(3, 8, 7, 0.88) 0%,
+          rgba(3, 8, 7, 0.70) 25%,
+          rgba(3, 8, 7, 0.40) 52%,
+          rgba(3, 8, 7, 0.14) 78%,
+          rgba(3, 8, 7, 0.25) 100%
         ),
-        url("dashboard.png");
+        url("./Assets/dashboard.png");
 
       background-size: cover;
+
       background-position: center;
 
-      transform: scale(1.04);
+      background-repeat: no-repeat;
+
+      transform:
+        translate3d(
+          var(--mouse-x, 0px),
+          var(--mouse-y, 0px),
+          0
+        )
+        scale(1.04);
 
       z-index: -2;
 
@@ -306,9 +335,9 @@
       background:
         linear-gradient(
           180deg,
-          rgba(2, 7, 5, 0.12),
-          rgba(2, 7, 5, 0.25) 45%,
-          rgba(2, 7, 5, 0.78)
+          rgba(2, 7, 5, 0.10),
+          rgba(2, 7, 5, 0.20) 45%,
+          rgba(2, 7, 5, 0.74)
         );
 
       z-index: -1;
@@ -320,14 +349,24 @@
 
       min-height: 405px;
 
-      padding: 155px 42px 42px;
+      padding:
+        155px
+        42px
+        42px;
 
       display: flex;
+
       flex-direction: column;
+
       justify-content: flex-end;
 
       max-width: 760px;
     }
+
+
+    /* =========================================================
+       PROFILE IMAGE
+    ========================================================= */
 
     .profile-wrapper {
       position: absolute;
@@ -355,7 +394,8 @@
         0 18px 45px rgba(0, 0, 0, 0.38),
         0 0 25px rgba(60, 255, 137, 0.10);
 
-      animation: profileFloat 5s ease-in-out infinite;
+      animation:
+        profileFloat 5s ease-in-out infinite;
     }
 
     .profile {
@@ -370,12 +410,20 @@
 
       background: #d8ddd9;
 
-      border: 2px solid rgba(5, 15, 10, 0.85);
+      border:
+        2px solid
+        rgba(5, 15, 10, 0.85);
     }
+
+
+    /* =========================================================
+       HERO TEXT
+    ========================================================= */
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
+
       gap: 8px;
 
       width: fit-content;
@@ -388,6 +436,7 @@
       font-weight: 700;
 
       letter-spacing: 0.08em;
+
       text-transform: uppercase;
     }
 
@@ -401,23 +450,25 @@
 
       background: #57ff98;
 
-      box-shadow: 0 0 12px rgba(87, 255, 152, 0.75);
+      box-shadow:
+        0 0 12px rgba(87, 255, 152, 0.75);
     }
 
     .hero h1 {
       max-width: 720px;
 
-      font-size: clamp(42px, 7vw, 76px);
+      margin-bottom: 20px;
+
+      color: #f1fff6;
+
+      font-size:
+        clamp(42px, 7vw, 76px);
 
       line-height: 0.98;
 
       letter-spacing: -0.055em;
 
       font-weight: 800;
-
-      color: #f1fff6;
-
-      margin-bottom: 20px;
     }
 
     .hero h1 span {
@@ -427,15 +478,17 @@
     .hero-description {
       max-width: 610px;
 
-      color: rgba(230, 246, 236, 0.66);
+      color:
+        rgba(230, 246, 236, 0.66);
 
       font-size: 15px;
+
       line-height: 1.7;
     }
 
 
     /* =========================================================
-       SECTION
+       SECTIONS
     ========================================================= */
 
     section {
@@ -444,6 +497,7 @@
 
     .section {
       margin-top: 24px;
+
       padding: 34px;
     }
 
@@ -464,25 +518,29 @@
       font-weight: 800;
 
       letter-spacing: 0.13em;
+
       text-transform: uppercase;
 
       margin-bottom: 8px;
     }
 
     .section h2 {
-      font-size: clamp(25px, 4vw, 36px);
+      color: #effff4;
+
+      font-size:
+        clamp(25px, 4vw, 36px);
 
       letter-spacing: -0.035em;
-
-      color: #effff4;
     }
 
     .section-description {
       max-width: 500px;
 
-      color: rgba(228, 242, 233, 0.55);
+      color:
+        rgba(228, 242, 233, 0.55);
 
       font-size: 13px;
+
       line-height: 1.65;
     }
 
@@ -494,15 +552,19 @@
     .about-grid {
       display: grid;
 
-      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-columns:
+        1.25fr
+        0.75fr;
 
       gap: 20px;
     }
 
     .about-text {
-      color: rgba(232, 244, 236, 0.67);
+      color:
+        rgba(232, 244, 236, 0.67);
 
       font-size: 15px;
+
       line-height: 1.8;
     }
 
@@ -515,15 +577,18 @@
 
       border-radius: 20px;
 
-      border: 1px solid rgba(112, 255, 158, 0.08);
+      border:
+        1px solid
+        rgba(112, 255, 158, 0.08);
 
-      background: rgba(0, 0, 0, 0.16);
+      background:
+        rgba(0, 0, 0, 0.16);
     }
 
     .about-side-title {
-      font-size: 11px;
-
       color: #71ff9f;
+
+      font-size: 11px;
 
       font-weight: 800;
 
@@ -536,21 +601,28 @@
 
     .tech-list {
       display: flex;
+
       flex-wrap: wrap;
 
       gap: 8px;
     }
 
     .tech {
-      padding: 7px 10px;
+      padding:
+        7px
+        10px;
 
       border-radius: 9px;
 
-      border: 1px solid rgba(112, 255, 158, 0.10);
+      border:
+        1px solid
+        rgba(112, 255, 158, 0.10);
 
-      background: rgba(70, 255, 138, 0.045);
+      background:
+        rgba(70, 255, 138, 0.045);
 
-      color: rgba(232, 248, 237, 0.67);
+      color:
+        rgba(232, 248, 237, 0.67);
 
       font-size: 11px;
     }
@@ -563,7 +635,8 @@
     .repo-grid {
       display: grid;
 
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
       gap: 14px;
     }
@@ -576,12 +649,16 @@
       padding: 22px;
 
       display: flex;
+
       flex-direction: column;
+
       justify-content: space-between;
 
       border-radius: 21px;
 
-      border: 1px solid rgba(110, 255, 158, 0.09);
+      border:
+        1px solid
+        rgba(110, 255, 158, 0.09);
 
       background:
         linear-gradient(
@@ -604,6 +681,7 @@
       content: "";
 
       position: absolute;
+
       width: 150px;
       height: 150px;
 
@@ -621,7 +699,8 @@
     }
 
     .repo-card:hover {
-      border-color: rgba(108, 255, 158, 0.23);
+      border-color:
+        rgba(108, 255, 158, 0.23);
 
       background:
         linear-gradient(
@@ -647,13 +726,16 @@
       display: grid;
       place-items: center;
 
-      border-radius: 10px;
-
       margin-bottom: 16px;
 
-      background: rgba(73, 255, 144, 0.08);
+      border-radius: 10px;
 
-      border: 1px solid rgba(73, 255, 144, 0.10);
+      background:
+        rgba(73, 255, 144, 0.08);
+
+      border:
+        1px solid
+        rgba(73, 255, 144, 0.10);
 
       color: #76ffa7;
 
@@ -662,17 +744,18 @@
     }
 
     .repo-card h3 {
+      color: #edfff3;
+
       font-size: 17px;
 
       letter-spacing: -0.025em;
 
       margin-bottom: 7px;
-
-      color: #edfff3;
     }
 
     .repo-card p {
-      color: rgba(224, 240, 229, 0.52);
+      color:
+        rgba(224, 240, 229, 0.52);
 
       font-size: 12px;
 
@@ -684,14 +767,18 @@
       z-index: 2;
 
       display: flex;
-      justify-content: space-between;
+
       align-items: center;
+      justify-content: space-between;
+
+      gap: 12px;
 
       margin-top: 24px;
     }
 
     .repo-tech {
-      color: rgba(117, 255, 160, 0.70);
+      color:
+        rgba(117, 255, 160, 0.70);
 
       font-size: 10px;
 
@@ -702,12 +789,15 @@
 
     .repo-link {
       display: inline-flex;
+
       align-items: center;
+
       gap: 6px;
 
       color: #8affaF;
 
       font-size: 11px;
+
       font-weight: 700;
 
       transition:
@@ -717,6 +807,7 @@
 
     .repo-link:hover {
       gap: 10px;
+
       color: #b8ffcf;
     }
 
@@ -728,7 +819,8 @@
     .interest-grid {
       display: grid;
 
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns:
+        repeat(3, 1fr);
 
       gap: 12px;
     }
@@ -740,9 +832,12 @@
 
       border-radius: 19px;
 
-      border: 1px solid rgba(108, 255, 157, 0.08);
+      border:
+        1px solid
+        rgba(108, 255, 157, 0.08);
 
-      background: rgba(4, 14, 9, 0.58);
+      background:
+        rgba(4, 14, 9, 0.58);
 
       transition:
         transform 0.25s ease,
@@ -752,11 +847,13 @@
     .interest:hover {
       transform: translateY(-4px);
 
-      border-color: rgba(108, 255, 157, 0.19);
+      border-color:
+        rgba(108, 255, 157, 0.19);
     }
 
     .interest-number {
-      color: rgba(99, 255, 150, 0.38);
+      color:
+        rgba(99, 255, 150, 0.38);
 
       font-size: 11px;
 
@@ -772,7 +869,8 @@
     }
 
     .interest p {
-      color: rgba(226, 241, 231, 0.48);
+      color:
+        rgba(226, 241, 231, 0.48);
 
       font-size: 11px;
 
@@ -787,13 +885,17 @@
     .github-section {
       margin-top: 24px;
 
-      padding: 45px 34px;
+      padding:
+        45px
+        34px;
 
       text-align: center;
 
       border-radius: 28px;
 
-      border: 1px solid rgba(105, 255, 157, 0.13);
+      border:
+        1px solid
+        rgba(105, 255, 157, 0.13);
 
       background:
         radial-gradient(
@@ -808,7 +910,10 @@
     }
 
     .github-section h2 {
-      font-size: clamp(27px, 5vw, 43px);
+      color: #effff4;
+
+      font-size:
+        clamp(27px, 5vw, 43px);
 
       letter-spacing: -0.04em;
 
@@ -818,9 +923,13 @@
     .github-section p {
       max-width: 500px;
 
-      margin: 0 auto 24px;
+      margin:
+        0
+        auto
+        24px;
 
-      color: rgba(227, 241, 231, 0.54);
+      color:
+        rgba(227, 241, 231, 0.54);
 
       font-size: 13px;
 
@@ -835,7 +944,9 @@
 
       gap: 9px;
 
-      padding: 12px 18px;
+      padding:
+        12px
+        18px;
 
       border-radius: 12px;
 
@@ -844,10 +955,12 @@
       background: #79ffa8;
 
       font-size: 12px;
+
       font-weight: 800;
 
       box-shadow:
-        0 10px 30px rgba(79, 255, 143, 0.14);
+        0 10px 30px
+        rgba(79, 255, 143, 0.14);
 
       transition:
         transform 0.2s ease,
@@ -856,12 +969,14 @@
     }
 
     .github-button:hover {
-      transform: translateY(-3px);
+      transform:
+        translateY(-3px);
 
       background: #a0ffbe;
 
       box-shadow:
-        0 15px 40px rgba(79, 255, 143, 0.23);
+        0 15px 40px
+        rgba(79, 255, 143, 0.23);
     }
 
     .github-icon {
@@ -885,6 +1000,7 @@
 
     .reveal.visible {
       opacity: 1;
+
       transform: translateY(0);
     }
 
@@ -894,7 +1010,10 @@
       transform: translateY(18px);
 
       animation:
-        heroReveal 0.9s cubic-bezier(.2,.7,.2,1) forwards;
+        heroReveal
+        0.9s
+        cubic-bezier(.2,.7,.2,1)
+        forwards;
     }
 
     .hero-reveal.delay-1 {
@@ -911,24 +1030,28 @@
 
 
     /* =========================================================
-       ANIMATIONS
+       KEYFRAMES
     ========================================================= */
 
     @keyframes heroReveal {
       to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
     }
 
     @keyframes profileFloat {
       0%,
       100% {
-        transform: translateY(0);
+        transform:
+          translateY(0);
       }
 
       50% {
-        transform: translateY(-5px);
+        transform:
+          translateY(-5px);
       }
     }
 
@@ -940,12 +1063,19 @@
     @media (max-width: 760px) {
 
       .page {
-        width: min(100% - 20px, 600px);
+        width:
+          min(
+            calc(100% - 20px),
+            600px
+          );
+
         padding-top: 10px;
       }
 
       .nav {
-        padding: 10px 2px;
+        padding:
+          10px
+          2px;
       }
 
       .logo {
@@ -957,12 +1087,16 @@
       }
 
       .nav-links a {
-        padding: 7px 9px;
+        padding:
+          7px
+          9px;
+
         font-size: 10px;
       }
 
       .hero {
         min-height: 470px;
+
         border-radius: 27px;
       }
 
@@ -996,7 +1130,12 @@
       }
 
       .hero h1 {
-        font-size: clamp(38px, 13vw, 58px);
+        font-size:
+          clamp(
+            38px,
+            13vw,
+            58px
+          );
 
         line-height: 1;
 
@@ -1008,7 +1147,9 @@
       }
 
       .section {
-        padding: 25px 20px;
+        padding:
+          25px
+          20px;
       }
 
       .about-grid {
@@ -1032,7 +1173,9 @@
       }
 
       .github-section {
-        padding: 38px 22px;
+        padding:
+          38px
+          22px;
       }
     }
 
@@ -1045,11 +1188,15 @@
 
       .nav {
         align-items: flex-start;
+
         gap: 10px;
       }
 
       .nav-links a {
-        padding: 6px 7px;
+        padding:
+          6px
+          7px;
+
         font-size: 9px;
       }
 
@@ -1084,23 +1231,28 @@
 
       .reveal {
         opacity: 1;
+
         transform: none;
       }
     }
+
   </style>
 </head>
 
 
 <body>
 
-  <!-- Scroll progress -->
+  <!-- =======================================================
+       EFFECTS
+  ======================================================== -->
+
   <div class="scroll-progress"></div>
 
-  <!-- Mouse grid glow -->
   <div class="grid-glow"></div>
 
 
   <main class="page">
+
 
     <!-- =====================================================
          NAVIGATION
@@ -1114,6 +1266,7 @@
       >
         PSANDILYA1440
       </a>
+
 
       <div class="nav-links">
 
@@ -1153,7 +1306,7 @@
       <div class="profile-wrapper">
 
         <img
-          src="profile.png"
+          src="./Assets/profile.png"
           alt="Prakhhar Sandilya"
           class="profile"
         />
@@ -1163,18 +1316,24 @@
 
       <div class="hero-content">
 
-        <div class="eyebrow hero-reveal delay-1">
+        <div
+          class="eyebrow hero-reveal delay-1"
+        >
           Prakhhar Sandilya · Developer
         </div>
 
 
-        <h1 class="hero-reveal delay-2">
+        <h1
+          class="hero-reveal delay-2"
+        >
           Building simple,<br />
           <span>useful software.</span>
         </h1>
 
 
-        <p class="hero-description hero-reveal delay-3">
+        <p
+          class="hero-description hero-reveal delay-3"
+        >
           I enjoy experimenting with web and desktop applications,
           browsers, interfaces, and small utilities. I like keeping
           things lightweight, clean, and actually useful.
@@ -1208,6 +1367,7 @@
 
         </div>
 
+
         <p class="section-description">
           Most of my projects begin with an idea I want to explore,
           then slowly turn into something usable.
@@ -1221,12 +1381,17 @@
         <div class="about-text">
 
           <p>
-            I'm <strong>Prakhhar Sandilya</strong>, a developer who
-            enjoys building simple, lightweight, and thoughtfully
-            designed software.
+            I'm
+            <strong>
+              Prakhhar Sandilya
+            </strong>,
+            a developer who enjoys building simple,
+            lightweight, and thoughtfully designed software.
           </p>
 
+
           <br />
+
 
           <p>
             I like experimenting with browsers, desktop applications,
@@ -1235,11 +1400,15 @@
             HTML, CSS, and JavaScript experiments.
           </p>
 
+
           <br />
 
+
           <p>
-            I care about <strong>simplicity, clean design, and
-            learning by building</strong>.
+            I care about
+            <strong>
+              simplicity, clean design, and learning by building
+            </strong>.
           </p>
 
         </div>
@@ -1250,6 +1419,7 @@
           <div class="about-side-title">
             Technologies
           </div>
+
 
           <div class="tech-list">
 
@@ -1313,6 +1483,7 @@
 
         </div>
 
+
         <p class="section-description">
           A collection of experiments, applications, and things
           I've built because apparently making software is a
@@ -1325,7 +1496,9 @@
       <div class="repo-grid">
 
 
-        <!-- BLOCKY VS SPIKES -->
+        <!-- =================================================
+             BLOCKY VS SPIKES
+        ================================================== -->
 
         <article class="repo-card">
 
@@ -1353,6 +1526,7 @@
               HTML · CSS · JS
             </span>
 
+
             <a
               class="repo-link"
               href="https://github.com/PSANDILYA1440/Blocky-VS-Spikes-Source-code"
@@ -1367,7 +1541,9 @@
         </article>
 
 
-        <!-- MINIMAL HOMEPAGE -->
+        <!-- =================================================
+             MINIMAL HOMEPAGE
+        ================================================== -->
 
         <article class="repo-card">
 
@@ -1395,6 +1571,7 @@
               HTML · CSS · JS
             </span>
 
+
             <a
               class="repo-link"
               href="https://github.com/PSANDILYA1440/Minimal-Homepage"
@@ -1409,7 +1586,9 @@
         </article>
 
 
-        <!-- MINIMAL SURFER -->
+        <!-- =================================================
+             MINIMALSURFER
+        ================================================== -->
 
         <article class="repo-card">
 
@@ -1437,6 +1616,7 @@
               Electron · TS
             </span>
 
+
             <a
               class="repo-link"
               href="https://github.com/PSANDILYA1440/MinimalSurfer"
@@ -1451,7 +1631,9 @@
         </article>
 
 
-        <!-- SIMPLE J BROWSER -->
+        <!-- =================================================
+             SIMPLE JBROWSER
+        ================================================== -->
 
         <article class="repo-card">
 
@@ -1478,6 +1660,7 @@
               Java · JavaFX
             </span>
 
+
             <a
               class="repo-link"
               href="https://github.com/PSANDILYA1440/SimpleJBrowser"
@@ -1492,7 +1675,9 @@
         </article>
 
 
-        <!-- SIMPLE BROWSER -->
+        <!-- =================================================
+             SIMPLE BROWSER
+        ================================================== -->
 
         <article class="repo-card">
 
@@ -1520,6 +1705,7 @@
               Browser
             </span>
 
+
             <a
               class="repo-link"
               href="https://github.com/PSANDILYA1440/SimpleBrowser"
@@ -1534,7 +1720,9 @@
         </article>
 
 
-        <!-- CLOCK SCREENSAVER -->
+        <!-- =================================================
+             CLOCK SCREENSAVER
+        ================================================== -->
 
         <article class="repo-card">
 
@@ -1561,6 +1749,7 @@
             <span class="repo-tech">
               Electron · TS
             </span>
+
 
             <a
               class="repo-link"
@@ -1668,7 +1857,7 @@
 
 
     <!-- =====================================================
-         GITHUB CTA
+         GITHUB
     ====================================================== -->
 
     <section
@@ -1679,9 +1868,11 @@
         GitHub
       </div>
 
+
       <h2>
         See what I'm building.
       </h2>
+
 
       <p>
         More experiments, source code, and projects live
@@ -1733,6 +1924,7 @@
     const revealElements =
       document.querySelectorAll(".reveal");
 
+
     const revealObserver =
       new IntersectionObserver(
         (entries) => {
@@ -1745,7 +1937,9 @@
 
             entry.target.classList.add("visible");
 
-            revealObserver.unobserve(entry.target);
+            revealObserver.unobserve(
+              entry.target
+            );
 
           });
 
@@ -1764,7 +1958,7 @@
 
 
     /* =========================================================
-       SUNSET PARALLAX
+       MOUSE PARALLAX
     ========================================================= */
 
     const hero =
@@ -1777,24 +1971,39 @@
     let currentY = 0;
 
 
-    window.addEventListener("mousemove", (event) => {
+    window.addEventListener(
+      "mousemove",
+      (event) => {
 
-      mouseX =
-        (event.clientX / window.innerWidth - 0.5) * 2;
+        mouseX =
+          (
+            event.clientX /
+            window.innerWidth -
+            0.5
+          ) * 2;
 
-      mouseY =
-        (event.clientY / window.innerHeight - 0.5) * 2;
 
-    });
+        mouseY =
+          (
+            event.clientY /
+            window.innerHeight -
+            0.5
+          ) * 2;
+
+      }
+    );
 
 
     function animateParallax() {
 
       currentX +=
-        (mouseX - currentX) * 0.035;
+        (mouseX - currentX) *
+        0.035;
+
 
       currentY +=
-        (mouseY - currentY) * 0.035;
+        (mouseY - currentY) *
+        0.035;
 
 
       if (hero) {
@@ -1804,20 +2013,18 @@
           `${currentX * 6}px`
         );
 
+
         hero.style.setProperty(
           "--mouse-y",
           `${currentY * 6}px`
         );
 
-        hero.style.setProperty(
-          "--hero-scale",
-          "1.04"
-        );
-
       }
 
 
-      requestAnimationFrame(animateParallax);
+      requestAnimationFrame(
+        animateParallax
+      );
 
     }
 
@@ -1826,63 +2033,53 @@
 
 
     /* =========================================================
-       HERO BACKGROUND PARALLAX
-    ========================================================= */
-
-    const heroStyle =
-      document.createElement("style");
-
-    heroStyle.textContent = `
-
-      .hero::before {
-        transform:
-          translate3d(
-            var(--mouse-x, 0px),
-            var(--mouse-y, 0px),
-            0
-          )
-          scale(var(--hero-scale, 1.04));
-      }
-
-    `;
-
-    document.head.appendChild(heroStyle);
-
-
-    /* =========================================================
        CURSOR GRID GLOW
     ========================================================= */
 
     const gridGlow =
-      document.querySelector(".grid-glow");
+      document.querySelector(
+        ".grid-glow"
+      );
 
 
-    window.addEventListener("mousemove", (event) => {
+    window.addEventListener(
+      "mousemove",
+      (event) => {
 
-      if (!gridGlow) {
-        return;
+        if (!gridGlow) {
+          return;
+        }
+
+
+        gridGlow.style.left =
+          `${event.clientX}px`;
+
+
+        gridGlow.style.top =
+          `${event.clientY}px`;
+
+
+        gridGlow.style.opacity =
+          "1";
+
       }
-
-      gridGlow.style.left =
-        `${event.clientX}px`;
-
-      gridGlow.style.top =
-        `${event.clientY}px`;
-
-      gridGlow.style.opacity = "1";
-
-    });
+    );
 
 
-    window.addEventListener("mouseleave", () => {
+    window.addEventListener(
+      "mouseleave",
+      () => {
 
-      if (!gridGlow) {
-        return;
+        if (!gridGlow) {
+          return;
+        }
+
+
+        gridGlow.style.opacity =
+          "0";
+
       }
-
-      gridGlow.style.opacity = "0";
-
-    });
+    );
 
 
     /* =========================================================
@@ -1890,7 +2087,9 @@
     ========================================================= */
 
     const cards =
-      document.querySelectorAll(".repo-card");
+      document.querySelectorAll(
+        ".repo-card"
+      );
 
 
     cards.forEach((card) => {
@@ -1903,26 +2102,41 @@
             return;
           }
 
+
           const rect =
             card.getBoundingClientRect();
 
+
           const x =
-            event.clientX - rect.left;
+            event.clientX -
+            rect.left;
+
 
           const y =
-            event.clientY - rect.top;
+            event.clientY -
+            rect.top;
+
 
           const centerX =
             rect.width / 2;
 
+
           const centerY =
             rect.height / 2;
 
+
           const rotateX =
-            ((y - centerY) / centerY) * -2.5;
+            (
+              (y - centerY) /
+              centerY
+            ) * -2.5;
+
 
           const rotateY =
-            ((x - centerX) / centerX) * 2.5;
+            (
+              (x - centerX) /
+              centerX
+            ) * 2.5;
 
 
           card.style.transform =
@@ -1941,8 +2155,7 @@
         "mouseleave",
         () => {
 
-          card.style.transform =
-            "";
+          card.style.transform = "";
 
         }
       );
@@ -1955,7 +2168,9 @@
     ========================================================= */
 
     const progress =
-      document.querySelector(".scroll-progress");
+      document.querySelector(
+        ".scroll-progress"
+      );
 
 
     function updateProgress() {
@@ -1963,13 +2178,19 @@
       const scrollTop =
         window.scrollY;
 
+
       const documentHeight =
-        document.documentElement.scrollHeight -
+        document.documentElement
+          .scrollHeight -
         window.innerHeight;
+
 
       const percentage =
         documentHeight > 0
-          ? (scrollTop / documentHeight) * 100
+          ? (
+              scrollTop /
+              documentHeight
+            ) * 100
           : 0;
 
 
@@ -1986,8 +2207,11 @@
     window.addEventListener(
       "scroll",
       updateProgress,
-      { passive: true }
+      {
+        passive: true
+      }
     );
+
 
     updateProgress();
 
@@ -2012,14 +2236,19 @@
 
       navLinks.forEach((link) => {
 
-        link.classList.remove("active");
+        link.classList.remove(
+          "active"
+        );
+
 
         if (
           link.getAttribute("href") ===
           `#${id}`
         ) {
 
-          link.classList.add("active");
+          link.classList.add(
+            "active"
+          );
 
         }
 
@@ -2045,10 +2274,14 @@
               );
 
 
-          if (visible.length > 0) {
+          if (
+            visible.length > 0
+          ) {
 
             setActiveNav(
-              visible[0].target.id
+              visible[0]
+                .target
+                .id
             );
 
           }
@@ -2070,13 +2303,15 @@
 
     sections.forEach((section) => {
 
-      navObserver.observe(section);
+      navObserver.observe(
+        section
+      );
 
     });
 
 
     /* =========================================================
-       FORCE HOME WHEN NEAR TOP
+       KEEP HOME ACTIVE AT TOP
     ========================================================= */
 
     window.addEventListener(
@@ -2090,7 +2325,9 @@
         }
 
       },
-      { passive: true }
+      {
+        passive: true
+      }
     );
 
 
@@ -2105,7 +2342,10 @@
         (event) => {
 
           const href =
-            link.getAttribute("href");
+            link.getAttribute(
+              "href"
+            );
+
 
           if (
             !href ||
@@ -2116,7 +2356,10 @@
 
 
           const target =
-            document.querySelector(href);
+            document.querySelector(
+              href
+            );
+
 
           if (!target) {
             return;
