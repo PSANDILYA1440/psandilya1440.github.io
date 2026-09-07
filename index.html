@@ -1,848 +1,760 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PSANDILYA1440 · Prakhhar Sandilya</title>
+
+    <meta
+        name="description"
+        content="Prakhhar Sandilya · Developer building simple, lightweight, and thoughtfully designed software."
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Inter,
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    #202020 0,
+                    #111 35%,
+                    #0b0b0b 70%
+                );
+
+            color: #f2f2f2;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(900px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            padding: 28px 0;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .github-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 10px 16px;
+
+            border: 1px solid #383838;
+            border-radius: 10px;
+
+            background: #181818;
+
+            color: #fff;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .github-button:hover {
+            background: #222;
+            border-color: #555;
+            transform: translateY(-2px);
+        }
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+        .github-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
 
-  <meta
-    name="description"
-    content="Prakhhar Sandilya - Developer portfolio"
-  >
+        /* =========================
+           HERO
+        ========================= */
 
-  <title>PSANDILYA1440 · Prakhhar Sandilya</title>
+        .hero {
+            text-align: center;
+            padding: 65px 0 80px;
+        }
 
-  <style>
-    /* =========================
-       RESET
-    ========================= */
+        .profile-picture {
+            width: 110px;
+            height: 110px;
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            object-fit: cover;
 
-    html {
-      scroll-behavior: smooth;
-    }
+            border-radius: 24px;
 
-    body {
-      min-height: 100vh;
-      background: #09090b;
-      color: #f5f5f5;
+            border: 1px solid #333;
 
-      font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+            background: #181818;
 
-      line-height: 1.6;
-    }
+            margin-bottom: 28px;
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+            image-rendering: pixelated;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .eyebrow {
+            color: #9b9b9b;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 76px);
+            line-height: 1.02;
+            letter-spacing: -0.055em;
+            font-weight: 750;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: #888;
+        }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
+        .hero-description {
+            max-width: 650px;
+            margin: auto;
 
+            color: #aaa;
+
+            font-size: 17px;
+            line-height: 1.8;
+        }
 
-    /* =========================
-       BACKGROUND
-    ========================= */
+        /* =========================
+           SECTIONS
+        ========================= */
 
-    body::before {
-      content: "";
+        section {
+            padding: 45px 0;
+        }
 
-      position: fixed;
-      inset: 0;
+        .section-label {
+            color: #777;
 
-      pointer-events: none;
+            font-size: 12px;
+            font-weight: 700;
 
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(255, 255, 255, 0.055),
-          transparent 420px
-        );
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
 
-      z-index: -1;
-    }
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 30px;
+            letter-spacing: -0.035em;
+            margin-bottom: 28px;
+        }
+
+        .about {
+            color: #aaa;
+            max-width: 700px;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        /* =========================
+           REPOSITORIES
+        ========================= */
+
+        .repositories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
 
+        .repo-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-    /* =========================
-       MAIN CONTAINER
-    ========================= */
+            min-height: 190px;
 
-    .container {
-      width: min(100%, 760px);
+            padding: 24px;
+
+            background: #121212;
+            border: 1px solid #282828;
+            border-radius: 16px;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
+        }
 
-      margin: 0 auto;
+        .repo-card:hover {
+            transform: translateY(-4px);
+            border-color: #444;
+            background: #171717;
+        }
 
-      padding:
-        28px 20px
-        60px;
-    }
+        .repo-name {
+            font-size: 18px;
+            font-weight: 650;
+            margin-bottom: 10px;
+        }
 
+        .repo-description {
+            color: #858585;
+            font-size: 14px;
+            line-height: 1.7;
+        }
 
-    /* =========================
-       HEADER
-    ========================= */
+        .repo-link {
+            display: inline-flex;
+            align-items: center;
 
-    header {
-      display: flex;
+            margin-top: 24px;
 
-      align-items: center;
-      justify-content: space-between;
+            color: #ddd;
 
-      gap: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
 
-      margin-bottom: 80px;
-    }
+        .repo-link::after {
+            content: "↗";
+            margin-left: 7px;
 
-    .logo {
-      font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
 
-      font-weight: 700;
+        .repo-card:hover .repo-link::after {
+            transform: translate(2px, -2px);
+        }
 
-      letter-spacing: 0.08em;
+        /* =========================
+           WHAT I BUILD
+        ========================= */
 
-      color: #ffffff;
-    }
+        .build-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
 
-    .github-link {
-      display: inline-flex;
+        .build-item {
+            padding: 22px;
 
-      align-items: center;
-      justify-content: center;
+            background: #121212;
+            border: 1px solid #282828;
+            border-radius: 14px;
+        }
 
-      padding:
-        8px 14px;
+        .build-item h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
 
-      border:
-        1px solid #29292f;
+        .build-item p {
+            color: #858585;
+            font-size: 13px;
+            line-height: 1.7;
+        }
 
-      border-radius: 999px;
+        /* =========================
+           GITHUB
+        ========================= */
 
-      color: #a7a7ad;
+        .github-section {
+            margin: 40px 0 70px;
 
-      font-size: 0.85rem;
+            padding: 35px;
 
-      transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-    }
+            border: 1px solid #292929;
+            border-radius: 18px;
 
-    .github-link:hover {
-      color: #ffffff;
+            background: #111;
+        }
 
-      border-color: #55555e;
+        .github-section p {
+            color: #888;
+            margin-bottom: 22px;
+        }
 
-      transform: translateY(-1px);
-    }
+        .github-large-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
 
+            padding: 12px 18px;
 
-    /* =========================
-       HERO
-    ========================= */
+            background: #f2f2f2;
+            color: #090909;
 
-    .hero {
-      padding-bottom: 80px;
-    }
+            border-radius: 10px;
 
-    .eyebrow {
-      margin-bottom: 14px;
+            font-size: 14px;
+            font-weight: 700;
 
-      color: #8f8f96;
+            transition:
+                transform 0.2s ease,
+                opacity 0.2s ease;
+        }
 
-      font-size: 0.75rem;
+        .github-large-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
 
-      font-weight: 500;
+        /* =========================
+           MOBILE
+        ========================= */
 
-      letter-spacing: 0.18em;
+        @media (max-width: 700px) {
 
-      text-transform: uppercase;
-    }
+            .container {
+                width: min(100% - 28px, 900px);
+            }
 
-    h1 {
-      margin-bottom: 25px;
+            header {
+                padding: 20px 0;
+            }
 
-      font-size:
-        clamp(2.7rem, 10vw, 5rem);
+            .hero {
+                padding: 55px 0 60px;
+            }
 
-      line-height: 0.98;
+            .hero h1 {
+                font-size: 48px;
+            }
 
-      letter-spacing: -0.06em;
+            .hero-description {
+                font-size: 15px;
+            }
 
-      font-weight: 750;
-    }
+            .repositories {
+                grid-template-columns: 1fr;
+            }
 
-    .hero-description {
-      max-width: 650px;
+            .build-grid {
+                grid-template-columns: 1fr;
+            }
 
-      color: #a7a7ad;
+            .github-section {
+                padding: 26px;
+            }
+        }
 
-      font-size:
-        clamp(1rem, 2.5vw, 1.08rem);
+        @media (max-width: 450px) {
 
-      line-height: 1.75;
-    }
+            .logo {
+                font-size: 13px;
+            }
 
+            .github-button {
+                padding: 9px 12px;
+                font-size: 13px;
+            }
 
-    /* =========================
-       SECTIONS
-    ========================= */
+            .hero h1 {
+                font-size: 42px;
+            }
 
-    section {
-      padding:
-        38px 0;
-
-      border-top:
-        1px solid #25252a;
-    }
-
-    .section-label {
-      margin-bottom: 22px;
-
-      color: #8f8f96;
-
-      font-size: 0.75rem;
-
-      font-weight: 500;
-
-      letter-spacing: 0.18em;
-
-      text-transform: uppercase;
-    }
-
-    .section-text {
-      max-width: 650px;
-
-      color: #a7a7ad;
-
-      line-height: 1.75;
-    }
-
-
-    /* =========================
-       PROJECTS
-    ========================= */
-
-    .projects {
-      display: grid;
-
-      gap: 12px;
-    }
-
-    .project {
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      padding: 18px;
-
-      background: #111114;
-
-      border:
-        1px solid #29292f;
-
-      border-radius: 16px;
-
-      transition:
-        border-color 0.2s ease,
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
-
-    .project:hover {
-      border-color: #4a4a52;
-
-      background: #141417;
-
-      transform: translateY(-2px);
-    }
-
-    .project-info {
-      min-width: 0;
-    }
-
-    .project-title {
-      margin-bottom: 4px;
-
-      font-size: 1rem;
-
-      font-weight: 650;
-    }
-
-    .project-description {
-      color: #85858c;
-
-      font-size: 0.87rem;
-    }
-
-
-    /* =========================
-       BUTTONS
-    ========================= */
-
-    .project-actions {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      align-items: center;
-
-      justify-content: flex-end;
-
-      gap: 8px;
-
-      flex-shrink: 0;
-    }
-
-    .button {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      padding:
-        8px 12px;
-
-      background: #151518;
-
-      border:
-        1px solid #2c2c32;
-
-      border-radius: 10px;
-
-      color: #a7a7ad;
-
-      font-size: 0.78rem;
-
-      white-space: nowrap;
-
-      transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .button:hover {
-      color: #09090b;
-
-      background: #ffffff;
-
-      border-color: #ffffff;
-    }
-
-
-    /* =========================
-       GITHUB SECTION
-    ========================= */
-
-    .github-section {
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: flex-start;
-
-      gap: 18px;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding-top: 45px;
-
-      text-align: center;
-
-      color: #5f5f66;
-
-      font-size: 0.78rem;
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 600px) {
-
-      .container {
-        padding:
-          24px 16px
-          50px;
-      }
-
-      header {
-        margin-bottom: 60px;
-      }
-
-      .hero {
-        padding-bottom: 60px;
-      }
-
-      h1 {
-        font-size: clamp(
-          2.5rem,
-          13vw,
-          4rem
-        );
-      }
-
-      .project {
-        align-items: flex-start;
-
-        flex-direction: column;
-      }
-
-      .project-actions {
-        width: 100%;
-
-        justify-content: flex-start;
-      }
-
-      .button {
-        padding:
-          9px 13px;
-      }
-    }
-
-
-    /* =========================
-       SMALL MOBILE
-    ========================= */
-
-    @media (max-width: 380px) {
-
-      .github-link {
-        padding:
-          7px 11px;
-
-        font-size: 0.78rem;
-      }
-
-      .logo {
-        font-size: 0.8rem;
-      }
-    }
-  </style>
+            .profile-picture {
+                width: 95px;
+                height: 95px;
+                border-radius: 20px;
+            }
+        }
+    </style>
 </head>
 
-
 <body>
-
-  <main class="container">
-
 
     <!-- =========================
          HEADER
     ========================== -->
 
     <header>
+        <div class="container">
+            <nav class="nav">
 
-      <a
-        href="#top"
-        class="logo"
-      >
-        PSANDILYA1440
-      </a>
+                <a href="#" class="logo">
+                    PSANDILYA1440
+                </a>
 
-      <a
-        href="https://github.com/PSANDILYA1440"
-        class="github-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub ↗
-      </a>
+                <!-- Visible GitHub button -->
+                <a
+                    class="github-button"
+                    href="https://github.com/PSANDILYA1440"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <svg
+                        class="github-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.74 2.67 1.24 3.32.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18A10.8 10.8 0 0 1 12 5.89c.97 0 1.94.13 2.85.38 2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.26c0 .3.2.65.79.54A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+                    </svg>
 
+                    GitHub
+                </a>
+
+            </nav>
+        </div>
     </header>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <section
-      class="hero"
-      id="top"
-      style="border-top: none;"
-    >
-
-      <div class="eyebrow">
-        Prakhhar Sandilya · Developer
-      </div>
-
-      <h1>
-        Building simple,<br>
-        useful software.
-      </h1>
-
-      <p class="hero-description">
-        I'm Prakhhar Sandilya, a developer who enjoys
-        building simple, lightweight, and thoughtfully
-        designed software. I like experimenting with web
-        and desktop applications, particularly browsers,
-        interfaces, and small utilities. My projects range
-        from Electron and TypeScript applications to
-        vanilla HTML/CSS/JavaScript experiments and games.
-      </p>
-
-    </section>
-
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
-    <section>
-
-      <h2 class="section-label">
-        About
-      </h2>
-
-      <p class="section-text">
-        I care about clean design, simplicity, and learning
-        by building. Most of my projects start as an idea
-        I want to explore and turn into something actually
-        usable.
-      </p>
-
-    </section>
-
-
-    <!-- =========================
-         PROJECTS
-    ========================== -->
-
-    <section>
-
-      <h2 class="section-label">
-        My Favourite Repositories
-      </h2>
-
-
-      <div class="projects">
-
-
-        <!-- BLOCKY VS SPIKES -->
-
-        <article class="project">
-
-          <div class="project-info">
-
-            <h3 class="project-title">
-              Blocky VS Spikes
-            </h3>
-
-            <p class="project-description">
-              A small retro browser game.
-            </p>
-
-          </div>
-
-
-          <div class="project-actions">
-
-            <a
-              href="https://github.com/PSANDILYA1440/Blocky-VS-Spikes-Source-code"
-              class="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Repo ↗
-            </a>
-
-            <a
-              href="https://psandilya1440.github.io/Blocky-VS-Spikes-Source-code/"
-              class="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Play ↗
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- MINIMAL HOMEPAGE -->
-
-        <article class="project">
-
-          <div class="project-info">
-
-            <h3 class="project-title">
-              Minimal Homepage
-            </h3>
-
-            <p class="project-description">
-              A clean, customizable browser homepage.
-            </p>
-
-          </div>
-
-
-          <div class="project-actions">
-
-            <a
-              href="https://github.com/PSANDILYA1440/Minimal-Homepage"
-              class="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Repo ↗
-            </a>
-
-            <a
-              href="https://psandilya1440.github.io/Minimal-Homepage/"
-              class="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Site ↗
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- MINIMAL SURFER -->
-
-        <article class="project">
-
-          <div class="project-info">
-
-            <h3 class="project-title">
-              MinimalSurfer
-            </h3>
-
-            <p class="project-description">
-              A lightweight desktop web browser.
-            </p>
-
-          </div>
-
-
-          <div class="project-actions">
-
-            <a
-              href="https://github.com/PSANDILYA1440/MinimalSurfer"
-              class="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Repo ↗
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- SIMPLE JBROWSER -->
-
-        <article class="project">
-
-          <div class="project-info">
-
-            <h3 class="project-title">
-              SimpleJBrowser
-            </h3>
-
-            <p class="project-description">
-              An open-source JavaFX web browser.
-            </p>
-
-          </div>
-
-
-          <div class="project-actions">
-
-            <a
-              href="https://github.com/PSANDILYA1440/SimpleJBrowser"
-              class="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Repo ↗
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- SIMPLE BROWSER -->
-
-        <article class="project">
-
-          <div class="project-info">
-
-            <h3 class="project-title">
-              SimpleBrowser
-            </h3>
-
-            <p class="project-description">
-              A simple desktop browser experiment.
-            </p>
-
-          </div>
-
-          <div class="project-actions">
-
-            <a
-              href="https://github.com/PSANDILYA1440/SimpleBrowser"
-              class="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Repo ↗
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- CLOCK -->
-
-        <article class="project">
-
-          <div class="project-info">
-
-            <h3 class="project-title">
-              Clock Screensaver
-            </h3>
-
-            <p class="project-description">
-              A minimal macOS clock application.
-            </p>
-
-          </div>
-
-          <div class="project-actions">
-
-            <a
-              href="https://github.com/PSANDILYA1440/Clock-Screensaver-app"
-              class="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Repo ↗
-            </a>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         WHAT I BUILD
-    ========================== -->
-
-    <section>
-
-      <h2 class="section-label">
-        What I Build
-      </h2>
-
-      <p class="section-text">
-        Web applications, desktop utilities, browser
-        experiments, interfaces, and small interactive
-        projects. I especially enjoy projects where I can
-        keep the experience lightweight and uncomplicated.
-      </p>
-
-    </section>
-
-
-    <!-- =========================
-         GITHUB
-    ========================== -->
-
-    <section>
-
-      <div class="github-section">
-
-        <h2 class="section-label">
-          GitHub
-        </h2>
-
-        <p class="section-text">
-          Most of my experiments and projects live on GitHub.
-        </p>
-
-        <a
-          href="https://github.com/PSANDILYA1440"
-          class="button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Explore GitHub ↗
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-      ©
-      <span id="year"></span>
-      PSANDILYA1440
-
-    </footer>
-
-
-  </main>
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
-  <script>
-
-    // Automatically keeps the copyright year current.
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-  </script>
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+            <div class="container">
+
+                <img
+                    src="profile.png"
+                    alt="PSANDILYA1440 profile picture"
+                    class="profile-picture"
+                >
+
+                <div class="eyebrow">
+                    Prakhhar Sandilya · Developer
+                </div>
+
+                <h1>
+                    Building simple,<br>
+                    <span>useful software.</span>
+                </h1>
+
+                <p class="hero-description">
+                    I'm Prakhhar Sandilya, a developer who enjoys building
+                    simple, lightweight, and thoughtfully designed software.
+                    I like experimenting with web and desktop applications,
+                    particularly browsers, interfaces, and small utilities.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-label">
+                    About
+                </div>
+
+                <h2 class="section-title">
+                    Building things to understand how they work.
+                </h2>
+
+                <p class="about">
+                    I care about clean design, simplicity, and learning by
+                    building. Most of my projects start as an idea I want to
+                    explore and turn into something actually usable.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             REPOSITORIES
+        ========================== -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-label">
+                    Projects
+                </div>
+
+                <h2 class="section-title">
+                    My Repositories
+                </h2>
+
+                <div class="repositories">
+
+                    <a
+                        class="repo-card"
+                        href="https://github.com/PSANDILYA1440/Blocky-VS-Spikes-Source-code"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div>
+                            <div class="repo-name">
+                                Blocky VS Spikes
+                            </div>
+
+                            <p class="repo-description">
+                                A small retro browser game built with
+                                HTML, CSS, and JavaScript.
+                            </p>
+                        </div>
+
+                        <span class="repo-link">
+                            View repository
+                        </span>
+                    </a>
+
+
+                    <a
+                        class="repo-card"
+                        href="https://github.com/PSANDILYA1440/Minimal-Homepage"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div>
+                            <div class="repo-name">
+                                Minimal Homepage
+                            </div>
+
+                            <p class="repo-description">
+                                A clean, customizable browser homepage
+                                with a minimal futuristic interface.
+                            </p>
+                        </div>
+
+                        <span class="repo-link">
+                            View repository
+                        </span>
+                    </a>
+
+
+                    <a
+                        class="repo-card"
+                        href="https://github.com/PSANDILYA1440/MinimalSurfer"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div>
+                            <div class="repo-name">
+                                MinimalSurfer
+                            </div>
+
+                            <p class="repo-description">
+                                A minimal, lightweight desktop web browser
+                                built with Electron, Vite, and TypeScript.
+                            </p>
+                        </div>
+
+                        <span class="repo-link">
+                            View repository
+                        </span>
+                    </a>
+
+
+                    <a
+                        class="repo-card"
+                        href="https://github.com/PSANDILYA1440/SimpleJBrowser"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div>
+                            <div class="repo-name">
+                                SimpleJBrowser
+                            </div>
+
+                            <p class="repo-description">
+                                An open-source JavaFX web browser.
+                            </p>
+                        </div>
+
+                        <span class="repo-link">
+                            View repository
+                        </span>
+                    </a>
+
+
+                    <a
+                        class="repo-card"
+                        href="https://github.com/PSANDILYA1440/SimpleBrowser"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div>
+                            <div class="repo-name">
+                                SimpleBrowser
+                            </div>
+
+                            <p class="repo-description">
+                                A simple browser project focused on
+                                experimenting with desktop browsing.
+                            </p>
+                        </div>
+
+                        <span class="repo-link">
+                            View repository
+                        </span>
+                    </a>
+
+
+                    <a
+                        class="repo-card"
+                        href="https://github.com/PSANDILYA1440/Clock-Screensaver-app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div>
+                            <div class="repo-name">
+                                Clock Screensaver
+                            </div>
+
+                            <p class="repo-description">
+                                A lightweight minimal clock application
+                                for macOS.
+                            </p>
+                        </div>
+
+                        <span class="repo-link">
+                            View repository
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             WHAT I BUILD
+        ========================== -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-label">
+                    Interests
+                </div>
+
+                <h2 class="section-title">
+                    What I Build
+                </h2>
+
+                <div class="build-grid">
+
+                    <div class="build-item">
+                        <h3>Web</h3>
+                        <p>
+                            Websites, browser interfaces, games, and
+                            lightweight web experiments.
+                        </p>
+                    </div>
+
+                    <div class="build-item">
+                        <h3>Desktop</h3>
+                        <p>
+                            Small desktop applications and utilities
+                            focused on simplicity.
+                        </p>
+                    </div>
+
+                    <div class="build-item">
+                        <h3>Experiments</h3>
+                        <p>
+                            Projects built to explore ideas, technologies,
+                            and how software works.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             GITHUB
+        ========================== -->
+
+        <section>
+            <div class="container">
+
+                <div class="github-section">
+
+                    <div class="section-label">
+                        GitHub
+                    </div>
+
+                    <h2 class="section-title">
+                        More of my work
+                    </h2>
+
+                    <p>
+                        Explore my repositories, experiments, and projects
+                        on GitHub.
+                    </p>
+
+                    <a
+                        class="github-large-button"
+                        href="https://github.com/PSANDILYA1440"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <svg
+                            class="github-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.74 2.67 1.24 3.32.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18A10.8 10.8 0 0 1 12 5.89c.97 0 1.94.13 2.85.38 2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.26c0 .3.2.65.79.54A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+                        </svg>
+
+                        Visit GitHub
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
