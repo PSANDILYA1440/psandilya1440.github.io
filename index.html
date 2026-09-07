@@ -12,6 +12,11 @@
     >
 
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -31,15 +36,9 @@
                 Arial,
                 sans-serif;
 
-            background:
-                radial-gradient(
-                    circle at 50% -10%,
-                    #202020 0,
-                    #111 35%,
-                    #0b0b0b 70%
-                );
-
+            background: #090909;
             color: #f2f2f2;
+
             min-height: 100vh;
             line-height: 1.6;
         }
@@ -54,12 +53,13 @@
             margin: auto;
         }
 
+
         /* =========================
            HEADER
         ========================= */
 
         header {
-            padding: 28px 0;
+            padding: 26px 0;
         }
 
         .nav {
@@ -82,12 +82,12 @@
 
             padding: 10px 16px;
 
-            border: 1px solid #383838;
-            border-radius: 10px;
+            background: #171717;
 
-            background: #181818;
+            border: 1px solid #353535;
+            border-radius: 12px;
 
-            color: #fff;
+            color: white;
 
             font-size: 14px;
             font-weight: 600;
@@ -101,77 +101,171 @@
         .github-button:hover {
             background: #222;
             border-color: #555;
+
             transform: translateY(-2px);
         }
 
         .github-icon {
             width: 18px;
             height: 18px;
+
             fill: currentColor;
         }
 
+
         /* =========================
-           HERO
+           HERO / DASHBOARD
         ========================= */
 
         .hero {
-            text-align: center;
-            padding: 65px 0 80px;
+            padding: 35px 0 70px;
         }
 
+        .dashboard {
+            position: relative;
+
+            min-height: 510px;
+
+            border-radius: 40px;
+
+            overflow: hidden;
+
+            border: 1px solid #303030;
+
+            background-image:
+                url("dashboard.png");
+
+            background-size: cover;
+
+            /*
+                Adjust this if you want to move
+                the sunset around inside the card.
+            */
+            background-position: center center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            padding: 45px 30px;
+
+            box-shadow:
+                0 30px 90px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* Dark gradient over the sunset */
+
+        .dashboard::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.05) 15%,
+                    rgba(0, 0, 0, 0.15) 35%,
+                    rgba(0, 0, 0, 0.80) 100%
+                );
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           PROFILE PICTURE
+        ========================= */
+
         .profile-picture {
-            width: 110px;
-            height: 110px;
+            position: relative;
+
+            z-index: 2;
+
+            width: 120px;
+            height: 120px;
 
             object-fit: cover;
 
-            border-radius: 24px;
+            border-radius: 30px;
 
-            border: 1px solid #333;
+            border: 4px solid rgba(255, 255, 255, 0.92);
 
             background: #181818;
 
-            margin-bottom: 28px;
+            margin-bottom: 22px;
 
             image-rendering: pixelated;
 
             box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.35);
+                0 15px 45px rgba(0, 0, 0, 0.6);
+        }
+
+
+        /* =========================
+           HERO TEXT
+        ========================= */
+
+        .hero-content {
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            max-width: 700px;
         }
 
         .eyebrow {
-            color: #9b9b9b;
+            color: rgba(255, 255, 255, 0.75);
+
             font-size: 14px;
-            margin-bottom: 14px;
+
+            margin-bottom: 10px;
         }
 
         .hero h1 {
-            font-size: clamp(42px, 8vw, 76px);
+            color: white;
+
+            font-size: clamp(40px, 7vw, 66px);
+
             line-height: 1.02;
+
             letter-spacing: -0.055em;
+
             font-weight: 750;
-            margin-bottom: 24px;
+
+            margin-bottom: 17px;
         }
 
         .hero h1 span {
-            color: #888;
+            color: rgba(255, 255, 255, 0.65);
         }
 
         .hero-description {
-            max-width: 650px;
+            max-width: 620px;
+
             margin: auto;
 
-            color: #aaa;
+            color: rgba(255, 255, 255, 0.72);
 
-            font-size: 17px;
-            line-height: 1.8;
+            font-size: 15px;
+
+            line-height: 1.75;
         }
+
 
         /* =========================
            SECTIONS
         ========================= */
 
-        section {
+        section:not(.hero) {
             padding: 45px 0;
         }
 
@@ -179,26 +273,39 @@
             color: #777;
 
             font-size: 12px;
+
             font-weight: 700;
 
             text-transform: uppercase;
+
             letter-spacing: 0.14em;
 
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .section-title {
             font-size: 30px;
+
             letter-spacing: -0.035em;
-            margin-bottom: 28px;
+
+            margin-bottom: 25px;
         }
 
+
+        /* =========================
+           ABOUT
+        ========================= */
+
         .about {
-            color: #aaa;
+            color: #999;
+
             max-width: 700px;
+
             font-size: 16px;
+
             line-height: 1.9;
         }
+
 
         /* =========================
            REPOSITORIES
@@ -206,13 +313,18 @@
 
         .repositories {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 14px;
         }
 
         .repo-card {
             display: flex;
+
             flex-direction: column;
+
             justify-content: space-between;
 
             min-height: 190px;
@@ -220,8 +332,10 @@
             padding: 24px;
 
             background: #121212;
+
             border: 1px solid #282828;
-            border-radius: 16px;
+
+            border-radius: 17px;
 
             transition:
                 transform 0.2s ease,
@@ -231,24 +345,31 @@
 
         .repo-card:hover {
             transform: translateY(-4px);
-            border-color: #444;
+
+            border-color: #454545;
+
             background: #171717;
         }
 
         .repo-name {
             font-size: 18px;
+
             font-weight: 650;
-            margin-bottom: 10px;
+
+            margin-bottom: 9px;
         }
 
         .repo-description {
             color: #858585;
+
             font-size: 14px;
+
             line-height: 1.7;
         }
 
         .repo-link {
             display: inline-flex;
+
             align-items: center;
 
             margin-top: 24px;
@@ -256,19 +377,24 @@
             color: #ddd;
 
             font-size: 13px;
+
             font-weight: 600;
         }
 
         .repo-link::after {
             content: "↗";
+
             margin-left: 7px;
 
-            transition: transform 0.2s ease;
+            transition:
+                transform 0.2s ease;
         }
 
         .repo-card:hover .repo-link::after {
-            transform: translate(2px, -2px);
+            transform:
+                translate(2px, -2px);
         }
+
 
         /* =========================
            WHAT I BUILD
@@ -276,7 +402,10 @@
 
         .build-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 14px;
         }
 
@@ -284,23 +413,29 @@
             padding: 22px;
 
             background: #121212;
+
             border: 1px solid #282828;
-            border-radius: 14px;
+
+            border-radius: 15px;
         }
 
         .build-item h3 {
             font-size: 16px;
+
             margin-bottom: 8px;
         }
 
         .build-item p {
             color: #858585;
+
             font-size: 13px;
+
             line-height: 1.7;
         }
 
+
         /* =========================
-           GITHUB
+           GITHUB SECTION
         ========================= */
 
         .github-section {
@@ -309,29 +444,35 @@
             padding: 35px;
 
             border: 1px solid #292929;
-            border-radius: 18px;
+
+            border-radius: 20px;
 
             background: #111;
         }
 
         .github-section p {
             color: #888;
+
             margin-bottom: 22px;
         }
 
         .github-large-button {
             display: inline-flex;
+
             align-items: center;
+
             gap: 9px;
 
             padding: 12px 18px;
 
             background: #f2f2f2;
+
             color: #090909;
 
-            border-radius: 10px;
+            border-radius: 11px;
 
             font-size: 14px;
+
             font-weight: 700;
 
             transition:
@@ -341,8 +482,10 @@
 
         .github-large-button:hover {
             transform: translateY(-2px);
+
             opacity: 0.9;
         }
+
 
         /* =========================
            MOBILE
@@ -351,7 +494,11 @@
         @media (max-width: 700px) {
 
             .container {
-                width: min(100% - 28px, 900px);
+                width:
+                    min(
+                        calc(100% - 28px),
+                        900px
+                    );
             }
 
             header {
@@ -359,15 +506,32 @@
             }
 
             .hero {
-                padding: 55px 0 60px;
+                padding:
+                    20px 0 50px;
+            }
+
+            .dashboard {
+                min-height: 540px;
+
+                border-radius: 28px;
+
+                padding:
+                    35px 20px;
+            }
+
+            .profile-picture {
+                width: 100px;
+                height: 100px;
+
+                border-radius: 25px;
             }
 
             .hero h1 {
-                font-size: 48px;
+                font-size: 42px;
             }
 
             .hero-description {
-                font-size: 15px;
+                font-size: 14px;
             }
 
             .repositories {
@@ -383,6 +547,7 @@
             }
         }
 
+
         @media (max-width: 450px) {
 
             .logo {
@@ -391,92 +556,129 @@
 
             .github-button {
                 padding: 9px 12px;
+
                 font-size: 13px;
             }
 
             .hero h1 {
-                font-size: 42px;
+                font-size: 39px;
             }
 
-            .profile-picture {
-                width: 95px;
-                height: 95px;
-                border-radius: 20px;
+            .dashboard {
+                min-height: 560px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
+
 
     <!-- =========================
          HEADER
     ========================== -->
 
     <header>
+
         <div class="container">
+
             <nav class="nav">
 
-                <a href="#" class="logo">
+                <a
+                    href="#"
+                    class="logo"
+                >
                     PSANDILYA1440
                 </a>
 
-                <!-- Visible GitHub button -->
+
+                <!-- GITHUB BUTTON -->
+
                 <a
                     class="github-button"
                     href="https://github.com/PSANDILYA1440"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
+
                     <svg
                         class="github-icon"
                         viewBox="0 0 24 24"
                         aria-hidden="true"
                     >
+
                         <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.74 2.67 1.24 3.32.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18A10.8 10.8 0 0 1 12 5.89c.97 0 1.94.13 2.85.38 2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.26c0 .3.2.65.79.54A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+
                     </svg>
 
                     GitHub
+
                 </a>
 
             </nav>
+
         </div>
+
     </header>
+
 
 
     <main>
 
+
         <!-- =========================
-             HERO
+             DASHBOARD
         ========================== -->
 
         <section class="hero">
+
             <div class="container">
 
-                <img
-                    src="profile.png"
-                    alt="PSANDILYA1440 profile picture"
-                    class="profile-picture"
-                >
+                <div class="dashboard">
 
-                <div class="eyebrow">
-                    Prakhhar Sandilya · Developer
+
+                    <!-- PROFILE PICTURE -->
+
+                    <img
+                        src="profile.png"
+                        alt="PSANDILYA1440 profile picture"
+                        class="profile-picture"
+                    >
+
+
+                    <!-- HERO CONTENT -->
+
+                    <div class="hero-content">
+
+                        <div class="eyebrow">
+                            Prakhhar Sandilya · Developer
+                        </div>
+
+
+                        <h1>
+                            Building simple,<br>
+                            <span>useful software.</span>
+                        </h1>
+
+
+                        <p class="hero-description">
+                            I'm Prakhhar Sandilya, a developer who enjoys
+                            building simple, lightweight, and thoughtfully
+                            designed software. I like experimenting with
+                            web and desktop applications, particularly
+                            browsers, interfaces, and small utilities.
+                        </p>
+
+                    </div>
+
                 </div>
 
-                <h1>
-                    Building simple,<br>
-                    <span>useful software.</span>
-                </h1>
-
-                <p class="hero-description">
-                    I'm Prakhhar Sandilya, a developer who enjoys building
-                    simple, lightweight, and thoughtfully designed software.
-                    I like experimenting with web and desktop applications,
-                    particularly browsers, interfaces, and small utilities.
-                </p>
-
             </div>
+
         </section>
+
 
 
         <!-- =========================
@@ -484,6 +686,7 @@
         ========================== -->
 
         <section>
+
             <div class="container">
 
                 <div class="section-label">
@@ -496,12 +699,14 @@
 
                 <p class="about">
                     I care about clean design, simplicity, and learning by
-                    building. Most of my projects start as an idea I want to
-                    explore and turn into something actually usable.
+                    building. Most of my projects start as an idea I want
+                    to explore and turn into something actually usable.
                 </p>
 
             </div>
+
         </section>
+
 
 
         <!-- =========================
@@ -509,6 +714,7 @@
         ========================== -->
 
         <section>
+
             <div class="container">
 
                 <div class="section-label">
@@ -519,7 +725,11 @@
                     My Repositories
                 </h2>
 
+
                 <div class="repositories">
+
+
+                    <!-- BLOCKY VS SPIKES -->
 
                     <a
                         class="repo-card"
@@ -527,7 +737,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <div>
+
                             <div class="repo-name">
                                 Blocky VS Spikes
                             </div>
@@ -536,13 +748,18 @@
                                 A small retro browser game built with
                                 HTML, CSS, and JavaScript.
                             </p>
+
                         </div>
 
                         <span class="repo-link">
                             View repository
                         </span>
+
                     </a>
 
+
+
+                    <!-- MINIMAL HOMEPAGE -->
 
                     <a
                         class="repo-card"
@@ -550,7 +767,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <div>
+
                             <div class="repo-name">
                                 Minimal Homepage
                             </div>
@@ -559,13 +778,18 @@
                                 A clean, customizable browser homepage
                                 with a minimal futuristic interface.
                             </p>
+
                         </div>
 
                         <span class="repo-link">
                             View repository
                         </span>
+
                     </a>
 
+
+
+                    <!-- MINIMALSURFER -->
 
                     <a
                         class="repo-card"
@@ -573,7 +797,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <div>
+
                             <div class="repo-name">
                                 MinimalSurfer
                             </div>
@@ -582,13 +808,18 @@
                                 A minimal, lightweight desktop web browser
                                 built with Electron, Vite, and TypeScript.
                             </p>
+
                         </div>
 
                         <span class="repo-link">
                             View repository
                         </span>
+
                     </a>
 
+
+
+                    <!-- SIMPLE JBROWSER -->
 
                     <a
                         class="repo-card"
@@ -596,7 +827,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <div>
+
                             <div class="repo-name">
                                 SimpleJBrowser
                             </div>
@@ -604,13 +837,18 @@
                             <p class="repo-description">
                                 An open-source JavaFX web browser.
                             </p>
+
                         </div>
 
                         <span class="repo-link">
                             View repository
                         </span>
+
                     </a>
 
+
+
+                    <!-- SIMPLE BROWSER -->
 
                     <a
                         class="repo-card"
@@ -618,7 +856,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <div>
+
                             <div class="repo-name">
                                 SimpleBrowser
                             </div>
@@ -627,13 +867,18 @@
                                 A simple browser project focused on
                                 experimenting with desktop browsing.
                             </p>
+
                         </div>
 
                         <span class="repo-link">
                             View repository
                         </span>
+
                     </a>
 
+
+
+                    <!-- CLOCK SCREENSAVER -->
 
                     <a
                         class="repo-card"
@@ -641,7 +886,9 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <div>
+
                             <div class="repo-name">
                                 Clock Screensaver
                             </div>
@@ -650,17 +897,21 @@
                                 A lightweight minimal clock application
                                 for macOS.
                             </p>
+
                         </div>
 
                         <span class="repo-link">
                             View repository
                         </span>
+
                     </a>
 
                 </div>
 
             </div>
+
         </section>
+
 
 
         <!-- =========================
@@ -668,6 +919,7 @@
         ========================== -->
 
         <section>
+
             <div class="container">
 
                 <div class="section-label">
@@ -678,36 +930,60 @@
                     What I Build
                 </h2>
 
+
                 <div class="build-grid">
 
-                    <div class="build-item">
-                        <h3>Web</h3>
-                        <p>
-                            Websites, browser interfaces, games, and
-                            lightweight web experiments.
-                        </p>
-                    </div>
 
                     <div class="build-item">
-                        <h3>Desktop</h3>
+
+                        <h3>
+                            Web
+                        </h3>
+
+                        <p>
+                            Websites, browser interfaces, games,
+                            and lightweight web experiments.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="build-item">
+
+                        <h3>
+                            Desktop
+                        </h3>
+
                         <p>
                             Small desktop applications and utilities
                             focused on simplicity.
                         </p>
+
                     </div>
 
+
+
                     <div class="build-item">
-                        <h3>Experiments</h3>
+
+                        <h3>
+                            Experiments
+                        </h3>
+
                         <p>
-                            Projects built to explore ideas, technologies,
-                            and how software works.
+                            Projects built to explore ideas,
+                            technologies, and how software works.
                         </p>
+
                     </div>
+
 
                 </div>
 
             </div>
+
         </section>
+
 
 
         <!-- =========================
@@ -715,6 +991,7 @@
         ========================== -->
 
         <section>
+
             <div class="container">
 
                 <div class="github-section">
@@ -728,9 +1005,10 @@
                     </h2>
 
                     <p>
-                        Explore my repositories, experiments, and projects
-                        on GitHub.
+                        Explore my repositories, experiments,
+                        and projects on GitHub.
                     </p>
+
 
                     <a
                         class="github-large-button"
@@ -738,23 +1016,30 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
+
                         <svg
                             class="github-icon"
                             viewBox="0 0 24 24"
                             aria-hidden="true"
                         >
+
                             <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.74 2.67 1.24 3.32.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18A10.8 10.8 0 0 1 12 5.89c.97 0 1.94.13 2.85.38 2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.77.11 3.06.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.07.78 2.16v3.26c0 .3.2.65.79.54A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+
                         </svg>
 
                         Visit GitHub
+
                     </a>
 
                 </div>
 
             </div>
+
         </section>
 
+
     </main>
+
 
 </body>
 </html>
